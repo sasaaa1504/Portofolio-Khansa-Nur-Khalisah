@@ -808,11 +808,17 @@ footer { min-height: 130px; border-top: 1px solid rgba(255,255,255,.08); display
   }
 
   /* Halaman 1: Hero */
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 38px 0 65px;
-  }
-
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: auto;
+  padding: 60px 0 70px;
+  gap: 32px;
+}
+.hero-copy {
+  width: 100%;
+  max-width: none;
+}
   .terminal {
     margin-bottom: 20px;
     font-size: 10px;
