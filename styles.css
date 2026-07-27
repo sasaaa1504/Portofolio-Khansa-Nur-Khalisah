@@ -1275,4 +1275,63 @@ footer { min-height: 130px; border-top: 1px solid rgba(255,255,255,.08); display
   .contact-section h2 { font-size: clamp(42px, 13vw, 58px); }
 }
 
-@media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* KHANSA putih polos */
+.brand,
+.footer-brand {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.brand span,
+.footer-brand span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hilangkan lapisan efeknya saja, bukan huruf utama */
+.layered-brand::before,
+.layered-brand::after,
+.layered-brand span::before,
+.layered-brand span::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Posisi isi tombol dan ikon panah */
+.button.secondary,
+.case-study-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+/* Ikon panah SVG */
+.button-arrow {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

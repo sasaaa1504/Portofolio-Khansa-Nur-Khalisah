@@ -174,7 +174,17 @@ function renderProjects() {
         <p>${escapeHtml(project.desc)}</p>
         <p class="core-tech-label">CORE TECHNOLOGIES</p>
         <div class="tags">${tagsHtml(project.tags)}</div>
-        <button type="button" data-project="${index}" aria-label="View ${escapeHtml(project.title)} case study">View Case Study&nbsp; ↗</button>
+       <button
+        type="button"
+        data-project="${index}"
+        class="case-study-button"
+        aria-label="View ${escapeHtml(project.title)} case study"
+      >
+        <span>View Case Study</span>
+        <svg class="button-arrow" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M4 12L12 4M6 4h6v6"></path>
+        </svg>
+      </button>
       </div>
     </article>
   `).join("");
