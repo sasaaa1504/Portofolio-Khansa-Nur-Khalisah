@@ -286,7 +286,7 @@ const certificates = [
   ["07", "revou-digital-marketing.jpg", "RevoU Digital Marketing certificate"],
   ["08", "revou-data-analytics.jpg", "RevoU Data Analytics certificate"],
   ["09", "inflasi-2023.jpg", "INFLASI 2023 certificate"],
-  ["10", "excel-bootcamp-2026.jpg", "Microsoft Excel bootcamp certificate"]
+  ["10", "excel-bootcamp-2026.jpg", "Microsoft Excel bootcamp certificate"],
   ["11", "sertiflustrum.jpeg", "sertifikatlustrum"],
   ["12", "sertifpelatihandesign.jpeg", "Pelatihan Design"],
   ["13", "sertifpraktikum.jpeg", "Awarding Best Team"],
