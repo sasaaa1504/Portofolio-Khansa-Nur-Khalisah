@@ -95,7 +95,7 @@ main { min-height: 100vh; overflow: hidden; position: relative; background: radi
 .credibility-card strong i, .credibility-card strong em { font-size: 13px; font-style: normal; color: #ddd5df; display: block; margin-top: 3px; }
 
 .hero-visual { min-height: 620px; position: relative; display: grid; place-items: center; }
-.portrait-frame { width: min(385px, 70%); height: 545px; border-radius: 32px; padding: 3px; background: linear-gradient(135deg, var(--pink-soft), var(--pink), #672044); box-shadow: 0 0 40px rgba(255,45,125,.3), inset 0 0 30px rgba(255,255,255,.12); z-index: 3; overflow: hidden; }
+.portrait-frame { width: min(385px, 70%); height: 545px; border-radius: 32px; padding: 3px; background: #000000; box-shadow: none; z-index: 3; overflow: hidden; }
 .portrait-photo { display: block; width: 100%; height: 100%; border-radius: 29px; object-fit: cover; object-position: 40% 66%; filter: saturate(.92) contrast(1.04) brightness(1.05); }
 .portrait-placeholder { width: 100%; height: 100%; border-radius: 29px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 30%, #543046, #151020 54%, #070812 100%); position: relative; overflow: hidden; }
 .portrait-placeholder:before { content: ""; position: absolute; width: 300px; height: 300px; border: 1px solid rgba(255,143,189,.23); border-radius: 50%; }
@@ -147,9 +147,10 @@ main { min-height: 100vh; overflow: hidden; position: relative; background: radi
 .education-strip div { display: flex; flex-direction: column; gap: 8px; padding: 28px; border-right: 1px solid rgba(255,255,255,.1); }.education-strip div:last-child { border: 0; }
 .education-strip span { color: var(--pink); font: 12px "Courier New", monospace; }.education-strip strong { font-size: 20px; }.education-strip small { color: var(--muted); }
 
-.projects-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; }
+.projects-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
+
+.projects-grid > .project-card, .projects-grid > .project-card:nth-child(4), .projects-grid > .project-card:nth-child(5), .projects-grid > .project-card:nth-child(6) { grid-column: span 2; width: 100%; min-width: 0; height: 100%; }
 .project-card { grid-column: span 2; min-height: 405px; border: 1px solid rgba(255,255,255,.1); border-top: 4px solid var(--pink); background: linear-gradient(145deg, rgba(15,17,34,.94), rgba(8,9,21,.9)); border-radius: 20px; overflow: hidden; position: relative; transition: .25s ease; }
-.project-card:nth-child(4) { grid-column: 2 / span 2; }
 .project-card:hover { border-color: var(--border); transform: translateY(-4px); box-shadow: 0 25px 60px rgba(0,0,0,.28); }
 .project-number { position: absolute; top: 22px; left: 22px; z-index: 3; font: 12px "Courier New", monospace; color: var(--pink-soft); }
 .project-visual { min-height: 245px; display: grid; place-items: center; background: radial-gradient(circle, rgba(255,45,125,.2), transparent 58%), repeating-linear-gradient(90deg, transparent 0 44px, rgba(255,255,255,.025) 45px), repeating-linear-gradient(0deg, transparent 0 44px, rgba(255,255,255,.025) 45px); position: relative; overflow: hidden; }
@@ -1207,7 +1208,7 @@ footer { min-height: 130px; border-top: 1px solid rgba(255,255,255,.08); display
     text-align: center;
   }
 }
-
+#case-link-secondary { margin-top: 12px; }
 @media (prefers-reduced-motion: reduce) {
   .layered-brand,
   .layered-brand::before,

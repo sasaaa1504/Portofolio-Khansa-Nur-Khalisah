@@ -2,24 +2,48 @@
 
 const projects = [
   {
-    title: "Pertamina RU IV Employee Scheduling System",
-    shortTitle: "Pertamina Scheduling System",
+    title: "Pertamina RU IV - IT Dashboard & Scheduling",
+    shortTitle: "Pertamina RU IV - IT Dashboard & Scheduling",
     year: "2025",
     role: "UI/UX DESIGNER",
-    desc: "A preventive-maintenance scheduling interface designed around real operational needs at Fungsi IT RU IV.",
-    overview: "Designed a scheduling interface for Fungsi IT RU IV, Kilang Pertamina Internasional, to support and automate preventive maintenance planning for internal operational teams.",
-    challenge: "Preventive-maintenance scheduling was handled manually, making it difficult to track timelines, avoid overlapping schedules, and monitor progress across internal units.",
-    solution: "Designed an intuitive interface based on user research and operational needs so teams can plan, track, and monitor preventive-maintenance activities in one structured view.",
+
+    desc: "Designed operational dashboards and collaborative scheduling interfaces to support more structured monitoring, maintenance planning, and room-booking workflows at Pertamina RU IV.",
+
+    overview: "During my UI/UX internship at Fungsi IT RU IV, Kilang Pertamina Internasional, I contributed to the design of two internal digital solutions. The first was an IT services dashboard supporting preventive-maintenance planning and operational monitoring. The second was a web-based collaborative room-scheduling system for co-working spaces, designed using a Human-Centered Design approach to make room availability, booking, and employee scheduling more structured and accessible.",
+
+    challenge: "Operational monitoring and scheduling processes were still handled through fragmented or manual workflows. Teams found it difficult to track maintenance activities, monitor progress, check room availability, avoid overlapping schedules, and coordinate the use of shared collaborative spaces efficiently.",
+
+    solution: "Conducted user-centered exploration and translated operational requirements into structured user flows, wireframes, prototypes, and dashboard visualizations. The resulting interfaces centralized maintenance monitoring and collaborative room scheduling while providing clearer information hierarchy, booking status, schedule visibility, and more consistent interaction patterns.",
+
     features: [
-      "Centralized preventive-maintenance scheduling",
-      "Interface tailored to operational workflows",
-      "Data-visualization mockups for daily monitoring",
-      "Collaboration with developers and IT staff across 3+ internal tools"
+      "Centralized preventive-maintenance scheduling and monitoring",
+      "IT services dashboard with operational data visualization",
+      "Collaborative room availability and booking interface",
+      "Employee and room-scheduling workflow management",
+      "Conflict prevention for overlapping room reservations",
+      "Structured booking status and schedule information",
+      "Human-Centered Design approach based on user needs",
+      "Collaboration with developers and internal IT teams"
     ],
-    tags: ["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping"],
+
+    tags: [
+      "Figma",
+      "Adobe XD",
+      "Human-Centered Design",
+      "User Research",
+      "User Flow",
+      "Wireframing",
+      "Prototyping",
+      "Data Visualization"
+    ],
+
     image: "assets/projects/pertamina.jpeg",
-    caseUrl: "https://www.figma.com/proto/mQY9zsMTE0XeCcQ5p3tF1v/KP-Sistem-Penjadwalan-Otomatis?node-id=411-4182&t=DL4AQhd9WBNx9XKB-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-    caseCta: "View Prototype"
+
+    caseUrl: "https://www.figma.com/proto/bfwdXuydQWPOVdolYyqOd2/Project-IT-Services-Dashboard?node-id=163-3264&t=S7sAzlCkNzVqPvHp-1",
+    caseCta: "View Dashboard Prototype",
+
+    caseUrl2: "https://www.figma.com/design/mQY9zsMTE0XeCcQ5p3tF1v/KP-Sistem-Penjadwalan-Otomatis?node-id=0-1&t=aXtJxUFBOdBbfSth-1",
+    caseCta2: "View Scheduling Design"
   },
   {
     title: "NBA Training Camp App",
@@ -78,8 +102,8 @@ const projects = [
     ],
     tags: ["Figma", "PHP", "MySQL", "System Analysis", "Database Design"],
     image: "assets/projects/hittix.jpeg",
-    caseUrl: "https://www.figma.com/proto/qJ4QGUwDaIIHGEriH5aqTW/HitTix?node-id=183-229&t=XT8BV5s969mO0h5z-1",
-    caseCta: "View Prototype"
+    caseUrl: "https://github.com/sasaaa1504/HitTix",
+    caseCta: "View Repository"
   },
   {
     title: "Posyandu Harapan Bunda Information System",
@@ -100,6 +124,124 @@ const projects = [
     image: "assets/projects/posyandu.jpeg",
     caseUrl: "https://www.figma.com/design/XujZDoCS5Lv8Yq1umJemmB/POSYANDU-WEBSITE?node-id=227-3005&t=q6BpYqJppELPjVKq-1",
     caseCta: "View Design"
+  },
+  {
+    title: "Concert Lineup Optimization Dashboard",
+    shortTitle: "Concert Lineup Optimizer",
+    year: "2026",
+    role: "UI/UX DESIGNER & FRONTEND CONTRIBUTOR",
+
+    desc: "Designed and contributed to the frontend implementation of a dashboard for optimizing concert lineups based on energy flow, artist popularity, and headliner placement.",
+
+    overview: "Designed a web-based dashboard that helps concert and music-festival organizers generate optimized artist performance schedules using a Genetic Algorithm. I contributed to the UI/UX design and frontend implementation, transforming complex scheduling parameters and optimization results into a clear and accessible digital experience.",
+
+    challenge: "Concert lineup planning involves multiple considerations, including artist popularity, performance energy, and strategic headliner placement. The main challenge was presenting complex configuration options and optimization results through an interface that remains intuitive, structured, and easy for event organizers to use.",
+
+    solution: "Designed a structured user flow covering festival-data management, algorithm configuration, and optimized lineup results. I also contributed to translating the interface design into reusable frontend components while maintaining a consistent visual hierarchy, responsive layout, and clear data presentation.",
+
+    features: [
+      "Festival and artist dataset management interface",
+      "Genetic Algorithm parameter configuration flow",
+      "Dashboard summary for festival and artist data",
+      "Optimized lineup and energy-flow visualization",
+      "Clear headliner placement indicators",
+      "Responsive frontend interface",
+      "PDF export for generated concert lineups"
+    ],
+
+    tags: [
+      "Figma",
+      "UI/UX Design",
+      "React.js",
+      "Tailwind CSS",
+      "Prototyping",
+      "Data Visualization"
+    ],
+
+    image: "assets/projects/concert-lineup-dashboard.jpeg",
+    caseUrl: "https://github.com/odynamic/Lineup-Concert-Optimization",
+    caseCta: "View Repository"
+  },
+  {
+    title: "Expense & Budget Visualizer",
+    shortTitle: "Budget Visualizer",
+    year: "2026",
+    role: "FRONTEND DEVELOPER & UI DESIGNER",
+
+    desc: "A mobile-friendly web application for recording daily transactions, monitoring expenses, and visualizing spending patterns by category.",
+
+    overview: "Developed as a mini project for the CodingCamp-20July26 bootcamp, this web application helps users record, organize, and visualize their daily expenses. The application provides transaction management, category-based visualizations, monthly summaries, and budget-limit indicators through a simple and accessible interface.",
+
+    challenge: "Managing daily expenses manually makes it difficult for users to understand their spending patterns, compare expenses across categories, and identify transactions that exceed their personal budget. The project also required all data and interactions to work directly in the browser without a backend or external database.",
+
+    solution: "Designed and developed a responsive expense-management dashboard using vanilla HTML, CSS, and JavaScript. Browser LocalStorage was used to preserve transaction data, while Chart.js was integrated to transform expense records into an easy-to-understand category-based pie chart.",
+
+    features: [
+      "Transaction input with item, amount, category, and month fields",
+      "Required-field validation before transaction submission",
+      "Scrollable transaction list with delete functionality",
+      "Automatically updated total expense balance",
+      "Category-based expense visualization using Chart.js",
+      "Monthly expense summaries and category filtering",
+      "Transaction sorting by amount or category",
+      "Budget-limit settings with overspending indicators",
+      "Persistent transaction data using Browser LocalStorage"
+    ],
+
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "LocalStorage",
+      "Responsive Design"
+    ],
+
+    image: "assets/projects/expense-budget-visualizer.jpeg",
+
+      caseUrl: "https://github.com/sasaaa1504/CodingCamp-20July26-KhansaNurKhalisah",
+      caseCta: "View Repository"
+  },
+  {
+    title: "Khansa Nur Khalisah — Static Portfolio",
+    shortTitle: "Personal Portfolio Website",
+    year: "2026",
+    role: "UI/UX DESIGNER & FRONTEND DEVELOPER",
+
+    desc: "Designed and developed a responsive personal portfolio website showcasing projects, experiences, skills, certificates, and professional contact information.",
+
+    overview: "Designed and developed a personal portfolio website to present my multidisciplinary experience across UI/UX design, data analytics, data management, and digital product development. The website was built using vanilla HTML, CSS, and JavaScript, making it lightweight, accessible, and easy to deploy through GitHub and Vercel.",
+
+    challenge: "The main challenge was organizing a large amount of professional information into a cohesive and engaging experience without overwhelming visitors. The website also needed to remain responsive across laptop, tablet, and mobile screens while supporting several interactive components without relying on external frameworks.",
+
+    solution: "Created a futuristic and responsive portfolio interface with a structured content hierarchy, reusable project cards, interactive case-study modals, category-based experience filtering, and touch-friendly carousels. Content was separated from presentation logic through JavaScript data arrays, allowing projects, experiences, skills, and certificates to be updated without changing the main HTML structure.",
+
+    features: [
+      "Responsive layout for desktop, tablet, and mobile screens",
+      "Dynamic project cards with interactive case-study modals",
+      "Experience filtering by internship, organization, and project",
+      "Swipe-enabled skills and certificate carousels",
+      "Automatic certificate slider with navigation controls",
+      "Responsive mobile navigation with hamburger menu",
+      "Downloadable CV and integrated social-media links",
+      "Data-driven content management using JavaScript arrays",
+      "GitHub integration and automatic deployment through Vercel"
+    ],
+
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design",
+      "UI/UX Design",
+      "Vercel"
+    ],
+
+    image: "assets/projects/personal-portfolio-website.jpeg",
+
+    caseUrl: "https://portofolio-khansa-nur-khalisah.vercel.app",
+
+    caseCta: "View Live Website"
   }
 ];
 
@@ -205,9 +347,29 @@ function openProject(index) {
   document.querySelector("#case-features").innerHTML = project.features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("");
   document.querySelector("#case-tags").innerHTML = tagsHtml(project.tags);
   const link = document.querySelector("#case-link");
-  link.href = project.caseUrl;
-  link.innerHTML = `${escapeHtml(project.caseCta)}&nbsp; ↗`;
-  modal.hidden = false;
+link.href = project.caseUrl;
+link.innerHTML = `${escapeHtml(project.caseCta)}&nbsp; ↗`;
+
+let secondLink = document.querySelector("#case-link-secondary");
+
+if (!secondLink) {
+  secondLink = link.cloneNode(true);
+  secondLink.id = "case-link-secondary";
+  link.insertAdjacentElement("afterend", secondLink);
+}
+
+if (project.caseUrl2) {
+  secondLink.href = project.caseUrl2;
+  secondLink.innerHTML = `${escapeHtml(project.caseCta2 || "View Additional Project")}&nbsp; ↗`;
+  secondLink.hidden = false;
+} else {
+  secondLink.hidden = true;
+  secondLink.removeAttribute("href");
+}
+
+modal.hidden = false;
+document.body.style.overflow = "hidden";
+document.querySelector(".case-close").focus();
   document.body.style.overflow = "hidden";
   document.querySelector(".case-close").focus();
 }
