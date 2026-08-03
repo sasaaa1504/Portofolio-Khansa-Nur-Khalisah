@@ -308,11 +308,10 @@ const certificates = [
 ].map(([number, file, alt]) => ({ number, src: `assets/certificates/${file}`, alt }));
 
 const state = {
-  experienceFilter: "all",
+  project: 0,
+  experience: "all",
   skill: 0,
-  certificate: 0,
-  skillSwipeStart: null,
-  certificateSwipeStart: null
+  certificate: 0
 };
 
 const escapeHtml = (value) => String(value)
@@ -425,25 +424,161 @@ function positionClass(index, active, length) {
   return "hidden";
 }
 
+let skillAutoSlide;
+let skillTouchStartX = 0;
+
 function renderSkills() {
   const track = document.querySelector("#skills-track");
+  const dotsContainer = document.querySelector("#skill-dots");
 
-  track.innerHTML = skillGroups.map((group, index) => `
-    <article class="skill-slide" data-index="${index}">
-      <span class="skill-number">${group.number ?? String(index + 1).padStart(2, "0")}</span>
-      <h3>${group.title}</h3>
+  if (!track || !dotsContainer || !skillGroups.length) return;
 
-      <div class="tags">
-        ${group.skills.map((skill) => `<span>${skill}</span>`).join("")}
-      </div>
-    </article>
-  `).join("");
+  state.skill =
+    ((state.skill ?? 0) + skillGroups.length) % skillGroups.length;
+
+  const previousIndex =
+    (state.skill - 1 + skillGroups.length) % skillGroups.length;
+
+  const nextIndex =
+    (state.skill + 1) % skillGroups.length;
+
+  track.innerHTML = skillGroups
+    .map((group, index) => {
+      let positionClass = "hidden";
+
+      if (index === state.skill) {
+        positionClass = "active";
+      } else if (index === previousIndex) {
+        positionClass = "previous";
+      } else if (index === nextIndex) {
+        positionClass = "next";
+      }
+
+      return `
+        <article
+          class="skill-slide ${positionClass}"
+          data-index="${index}"
+          aria-hidden="${index !== state.skill}"
+        >
+          <span class="skill-number">
+            ${group.number ?? String(index + 1).padStart(2, "0")}
+          </span>
+
+          <h3>${group.title}</h3>
+
+          <div class="tags">
+            ${group.skills
+              .map((skill) => `<span>${skill}</span>`)
+              .join("")}
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+
+  dotsContainer.innerHTML = skillGroups
+    .map(
+      (_, index) => `
+        <button
+          type="button"
+          class="${index === state.skill ? "active" : ""}"
+          data-skill-index="${index}"
+          aria-label="Open skill category ${index + 1}"
+          aria-current="${index === state.skill ? "true" : "false"}"
+        ></button>
+      `
+    )
+    .join("");
 }
 
 function changeSkill(direction) {
-  state.skill = (state.skill + direction + skillGroups.length) % skillGroups.length;
+  state.skill =
+    (state.skill + direction + skillGroups.length) %
+    skillGroups.length;
+
   renderSkills();
+  restartSkillAutoSlide();
 }
+
+function openSkill(index) {
+  state.skill = index;
+  renderSkills();
+  restartSkillAutoSlide();
+}
+
+function startSkillAutoSlide() {
+  clearInterval(skillAutoSlide);
+
+  skillAutoSlide = setInterval(() => {
+    state.skill = (state.skill + 1) % skillGroups.length;
+    renderSkills();
+  }, 5000);
+}
+
+function restartSkillAutoSlide() {
+  clearInterval(skillAutoSlide);
+  startSkillAutoSlide();
+}
+const skillsCarousel = document.querySelector("#skills-carousel");
+
+if (skillsCarousel) {
+  skillsCarousel.addEventListener("click", (event) => {
+    const actionButton = event.target.closest("[data-skill-action]");
+    const dotButton = event.target.closest("[data-skill-index]");
+
+    if (actionButton) {
+      const action = actionButton.dataset.skillAction;
+
+      if (action === "previous") {
+        changeSkill(-1);
+      }
+
+      if (action === "next") {
+        changeSkill(1);
+      }
+    }
+
+    if (dotButton) {
+      openSkill(Number(dotButton.dataset.skillIndex));
+    }
+  });
+
+  skillsCarousel.addEventListener(
+    "touchstart",
+    (event) => {
+      skillTouchStartX = event.touches[0].clientX;
+    },
+    { passive: true }
+  );
+
+  skillsCarousel.addEventListener(
+    "touchend",
+    (event) => {
+      const touchEndX = event.changedTouches[0].clientX;
+      const distance = touchEndX - skillTouchStartX;
+
+      if (Math.abs(distance) < 50) return;
+
+      if (distance < 0) {
+        changeSkill(1);
+      } else {
+        changeSkill(-1);
+      }
+    },
+    { passive: true }
+  );
+
+  skillsCarousel.addEventListener("mouseenter", () => {
+    clearInterval(skillAutoSlide);
+  });
+
+  skillsCarousel.addEventListener("mouseleave", () => {
+    restartSkillAutoSlide();
+  });
+}
+
+renderSkills();
+startSkillAutoSlide();
 
 function renderCertificates() {
   document.querySelector("#certificate-track").innerHTML = certificates.map((item, index) => `
