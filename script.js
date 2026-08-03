@@ -1,5 +1,15 @@
 "use strict";
+const arrowUpRightIcon = `
+  <svg class="button-arrow" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M4 12L12 4M6 4h6v6"></path>
+  </svg>
+`;
 
+const arrowDownIcon = `
+  <svg class="button-arrow arrow-down" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M8 3v10M4.5 9.5 8 13l3.5-3.5"></path>
+  </svg>
+`;
 const projects = [
   {
     title: "Pertamina RU IV - IT Dashboard & Scheduling",
@@ -248,7 +258,7 @@ const projects = [
 const experiences = [
   ["organization", "2026", "Public Relations", "Volunteer Purwokerto", "Managed external communication, community engagement, and partnerships for social initiatives."],
   ["internship", "2025", "UI/UX Designer Intern", "Kilang Pertamina Internasional", "Designed an IT service monitoring dashboard and data-visualization mockups with developers and IT teams."],
-  ["organization", "2025", "Chairman of Dies Natalis Informatics", "Faculty of Engineering, Unsoed", "Led 6 divisions and 40+ committee members through planning, resources, budgets, and execution."],
+  ["organization", "2025", "Chairman of Dies Natalis Informatics", "Faculty of Engineering, Unsoed", "Led 6 divisions and 90 committee members through planning, resources, budgets, and execution."],
   ["organization", "2025", "Digital Marketing", "Smartani Greenhouse IoT Monitoring", "Built brand awareness through consistent Instagram and TikTok content strategy."],
   ["organization", "2025", "Tracer Study Surveyor Team", "Faculty of Engineering, Unsoed", "Collected and verified alumni career data for evaluation, accreditation, and graduate-employability reporting."],
   ["project", "2025", "Posyandu Harapan Bunda", "UI/UX Designer", "Designed a healthcare system for administration, registration, service queues, and health-data recording."],
@@ -330,9 +340,7 @@ function renderProjects() {
         aria-label="View ${escapeHtml(project.title)} case study"
       >
         <span>View Case Study</span>
-        <svg class="button-arrow" viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M4 12L12 4M6 4h6v6"></path>
-        </svg>
+        ${arrowUpRightIcon}
       </button>
       </div>
     </article>
@@ -355,7 +363,7 @@ function openProject(index) {
   document.querySelector("#case-tags").innerHTML = tagsHtml(project.tags);
   const link = document.querySelector("#case-link");
 link.href = project.caseUrl;
-link.innerHTML = `${escapeHtml(project.caseCta)}&nbsp; ↗`;
+link.innerHTML = ` <span>${escapeHtml(project.caseCta)}</span> ${arrowUpRightIcon}`;
 
 let secondLink = document.querySelector("#case-link-secondary");
 
@@ -367,7 +375,7 @@ if (!secondLink) {
 
 if (project.caseUrl2) {
   secondLink.href = project.caseUrl2;
-  secondLink.innerHTML = `${escapeHtml(project.caseCta2 || "View Additional Project")}&nbsp; ↗`;
+  secondLink.innerHTML = `<span>${escapeHtml(project.caseCta2 || "View Additional Project")}</span>${arrowUpRightIcon}`;
   secondLink.hidden = false;
 } else {
   secondLink.hidden = true;
