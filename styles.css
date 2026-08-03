@@ -2455,3 +2455,235 @@ footer > span {
     white-space: nowrap !important;
   }
 }
+/* =========================================
+   DESKTOP LAYOUT — COMPACT DAN SEIMBANG
+========================================= */
+
+@media (min-width: 1051px) {
+  /* Lebar utama halaman */
+  .section-shell,
+  .site-header,
+  .experience-section,
+  .site-footer {
+    width: min(calc(100% - 80px), 1320px) !important;
+  }
+
+  /* Header */
+  .site-header {
+    min-height: 74px !important;
+    grid-template-columns: max-content minmax(0, 1fr) max-content !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .header-brand {
+    font-size: 13px !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .site-header .nav {
+    width: 100% !important;
+    max-width: 680px !important;
+    min-height: 48px !important;
+    padding: 6px 20px !important;
+  }
+
+  .site-header .nav a {
+    font-size: 13px !important;
+  }
+
+  .theme-toggle {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .hire-button {
+    min-height: 44px !important;
+    padding: 0 22px !important;
+    font-size: 14px !important;
+  }
+
+  /* Susunan hero */
+  .hero {
+    grid-template-columns: minmax(0, 56%) minmax(320px, 44%) !important;
+    min-height: auto !important;
+    padding: 75px 0 45px !important;
+    column-gap: 65px !important;
+    row-gap: 36px !important;
+    align-items: center !important;
+  }
+
+  .hero-copy {
+    align-self: center !important;
+    width: 100% !important;
+    max-width: 720px !important;
+  }
+
+  .terminal {
+    margin: 0 0 28px !important;
+    font-size: 12px !important;
+  }
+
+  .hero h1 {
+    max-width: 720px !important;
+    margin: 0 !important;
+    font-size: clamp(66px, 5.3vw, 88px) !important;
+    line-height: 0.92 !important;
+  }
+
+  .role {
+    margin-top: 28px !important;
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-description {
+    max-width: 680px !important;
+    margin-top: 18px !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  .hero-actions {
+    margin-top: 30px !important;
+    gap: 14px !important;
+  }
+
+  .hero-actions .button {
+    width: auto !important;
+    min-width: 145px !important;
+    min-height: 50px !important;
+    padding: 0 24px !important;
+    font-size: 15px !important;
+  }
+
+  .socials {
+    margin-top: 18px !important;
+  }
+
+  .socials a {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Foto */
+  .hero-visual {
+    min-height: 500px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .portrait-frame {
+    width: 365px !important;
+    height: 500px !important;
+  }
+
+  /* Card statistik */
+  .credibility-card {
+    width: 100% !important;
+    max-width: 720px !important;
+    margin-top: 28px !important;
+  }
+
+  /* Tools tidak menempel di dasar layar */
+  .tool-strip {
+    position: relative !important;
+    inset: auto !important;
+    bottom: auto !important;
+
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin: 10px 0 0 !important;
+  }
+}
+/* =========================================
+   FINAL HEADER DESKTOP ALIGNMENT
+========================================= */
+
+@media (min-width: 1051px) {
+  .site-header {
+    width: min(calc(100% - 64px), 1320px) !important;
+    min-height: 76px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: 210px minmax(500px, 1fr) 150px !important;
+    align-items: center !important;
+    column-gap: 18px !important;
+  }
+
+  /* Nama kiri */
+  .header-brand {
+    display: block !important;
+    position: static !important;
+    width: max-content !important;
+    max-width: 210px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-self: start !important;
+
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Navbar tengah */
+  .site-header .nav {
+    position: static !important;
+    width: 100% !important;
+    max-width: 680px !important;
+    min-height: 48px !important;
+    margin: 0 auto !important;
+    padding: 6px 20px !important;
+    justify-self: center !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-evenly !important;
+    gap: 12px !important;
+  }
+
+  .site-header .nav a {
+    margin: 0 !important;
+    padding: 7px 8px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Tombol kanan */
+  .site-header .header-actions {
+    position: static !important;
+    width: 150px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-self: end !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+  }
+
+  .theme-toggle {
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+  }
+
+  .header-actions .hire-button {
+    width: auto !important;
+    min-width: 86px !important;
+    min-height: 42px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+}

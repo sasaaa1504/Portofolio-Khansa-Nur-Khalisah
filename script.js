@@ -268,13 +268,16 @@ const filters = [
 ];
 
 const skillGroups = [
-  ["01", "Data & Analytics", ["Python", "Pandas", "NumPy", "Data Analysis", "Microsoft Excel", "Google Sheets"]],
-  ["02", "Data Management", ["SQL", "MySQL", "Database Systems", "Data Cleaning", "Data Recording"]],
-  ["03", "UI/UX Design", ["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping", "Design System"]],
-  ["04", "Development & Systems", ["PHP", "MySQL", "System Analysis", "Web Development", "Backend Integration"]],
-  ["05", "Digital & Collaboration", ["Canva", "Digital Marketing", "Social Media", "Microsoft Office", "Team Leadership"]],
-  ["06", "Project & Organization Management", ["Event Planning", "Budget & Timeline Management", "Cross-functional Coordination", "Public Relations", "Stakeholder Communication"]]
-].map(([code, title, skills]) => ({ code, title, skills }));
+  ["01", "Data & Analytics", ["Python", "Pandas", "NumPy", "Data Analysis", "Data Visualization", "Data Preprocessing", "Regression Modeling", "Microsoft Excel", "Google Sheets"]],
+  ["02", "Data Management", ["SQL", "MySQL", "Database Systems", "Data Cleaning", "Data Recording", "Data Validation", "Database Design", "Information Management"]],
+  ["03", "UI/UX Design", ["Figma", "Adobe XD", "User Research", "Human-Centered Design", "Wireframing", "Prototyping", "User Flow", "Information Architecture", "Design System", "Usability Testing"]],
+  ["04", "Web Development & Technologies", ["HTML", "CSS", "JavaScript", "PHP", "React.js", "Tailwind CSS", "MySQL", "Chart.js"]],
+  ["05", "Digital & Collaboration", ["Canva", "Digital Marketing", "Social Media Management", "Content Planning", "Microsoft Office", "Technical Documentation", "Teamwork", "Professional Communication"]],
+  ["06", "Leadership & Organization Management", ["Team Leadership", "Project Coordination", "Event Planning", "Budget & Timeline Management", "Cross-functional Coordination", "Public Relations", "Stakeholder Communication", "Problem Solving", "Decision Making"]],
+  ["07", "Research & Product Planning", ["Requirement Analysis", "Problem Definition", "Feasibility Study", "User Interviews", "Research Planning", "Product Planning", "Workflow Analysis", "Monitoring & Evaluation"]],
+  ["08", "IT Operations & Software Engineering", ["IT Service Monitoring", "Dashboard Monitoring", "Requirement Analysis", "System Analysis", "Frontend Development", "Backend Development", "Database Integration", "System Testing", "Technical Documentation"]],
+].map(([number, title, skills]) => ({ number, title, skills }));
+
 
 const certificates = [
   ["01", "pertamina-internship.jpg", "Pertamina internship certificate"],
