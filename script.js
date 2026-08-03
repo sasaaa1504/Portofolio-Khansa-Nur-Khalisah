@@ -534,3 +534,71 @@ setupInteractions();
 setupAboutAnimation();
 
 window.setInterval(() => changeCertificate(1), 5000);
+
+/* Portfolio loading screen */
+const preloader = document.querySelector("#preloader");
+const loadingPercentage = document.querySelector("#loading-percentage");
+const loadingProgress = document.querySelector("#loading-progress");
+
+if (preloader && loadingPercentage && loadingProgress) {
+  document.body.classList.add("loading");
+
+  let loadingValue = 0;
+
+  const loadingInterval = setInterval(() => {
+    loadingValue += Math.floor(Math.random() * 8) + 2;
+
+    if (loadingValue >= 100) {
+      loadingValue = 100;
+      clearInterval(loadingInterval);
+
+      setTimeout(() => {
+        preloader.classList.add("hide");
+        document.body.classList.remove("loading");
+
+        setTimeout(() => {
+          preloader.remove();
+        }, 700);
+      }, 450);
+    }
+
+    loadingPercentage.textContent = `${loadingValue}%`;
+    loadingProgress.style.width = `${loadingValue}%`;
+  }, 90);
+}
+/* Dark and light mode */
+const themeToggle = document.querySelector("#theme-toggle");
+const savedTheme = localStorage.getItem("portfolio-theme");
+
+if (savedTheme === "light") {
+  document.documentElement.setAttribute("data-theme", "light");
+}
+
+function updateThemeButton() {
+  if (!themeToggle) return;
+
+  const isLight =
+    document.documentElement.getAttribute("data-theme") === "light";
+
+  themeToggle.setAttribute(
+    "aria-label",
+    isLight ? "Switch to dark mode" : "Switch to light mode"
+  );
+}
+
+updateThemeButton();
+
+themeToggle?.addEventListener("click", () => {
+  const isLight =
+    document.documentElement.getAttribute("data-theme") === "light";
+
+  if (isLight) {
+    document.documentElement.removeAttribute("data-theme");
+    localStorage.setItem("portfolio-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("portfolio-theme", "light");
+  }
+
+  updateThemeButton();
+});

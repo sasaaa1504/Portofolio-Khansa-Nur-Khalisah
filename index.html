@@ -10,13 +10,29 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Loading Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-grid"></div>
+
+    <div class="preloader-content">
+      <div id="loading-percentage" class="loading-percentage">0%</div>
+
+      <div class="loading-bar">
+        <div id="loading-progress" class="loading-progress"></div>
+      </div>
+
+      <p class="loading-name">KHANSA NUR KHALISAH</p>
+      <p class="loading-status">INITIALIZING PORTFOLIO...</p>
+    </div>
+
+    <div class="loading-decoration">K</div>
+  </div>
   <main>
     <div class="ambient ambient-one"></div>
     <div class="ambient ambient-two"></div>
 
     <header class="site-header">
-      <a class="brand animated-brand layered-brand" data-text="KHANSA" href="#home" aria-label="Khansa — back to home">
-        <span style="--letter-index:0">K</span><span style="--letter-index:1">H</span><span style="--letter-index:2">A</span><span style="--letter-index:3">N</span><span style="--letter-index:4">S</span><span style="--letter-index:5">A</span>
+    <a class="brand header-brand" href="#home" aria-label="Khansa Nur Khalisah — back to home">KHANSA NUR KHALISAH</a
       </a>
       <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="nav">
@@ -24,13 +40,33 @@
         <a href="#experience">Experience</a><a href="#skills">Skills</a>
         <a href="#certificates">Certificates</a><a href="#contact">Contact</a>
       </nav>
+      <div class="header-actions">
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to light mode"
+      >
+        <!-- Ikon bulan -->
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"></path>
+        </svg>
+
+        <!-- Ikon matahari -->
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+        </svg>
+      </button>
+
       <a class="hire-button" href="#contact">Hire Me</a>
+</div>
     </header>
 
     <section id="home" class="hero section-shell">
       <div class="hero-copy">
         <p class="terminal">&gt;&gt;&gt; building meaningful impact with data and design</p>
-        <h1>KHANSA NUR<br><span>KHALISAH</span></h1>
+        <h1> <span class="hero-name-main">KHANSA NUR</span> <span class="hero-name-outline">KHALISAH</span> </h1>
         <p class="role">Computer Science Student <b>•</b> UI/UX Designer <b>•</b> Data Analyst Enthusiast</p>
         <p class="hero-description">Turning data and ideas into meaningful, intuitive, and well-structured digital experiences.</p>
         <div class="hero-actions">
@@ -198,13 +234,20 @@
       </div>
     </section>
 
-    <footer>
-      <a class="brand animated-brand layered-brand footer-brand" data-text="KHANSA" href="#home" aria-label="Khansa — back to home">
-        <span style="--letter-index:0">K</span><span style="--letter-index:1">H</span><span style="--letter-index:2">A</span><span style="--letter-index:3">N</span><span style="--letter-index:4">S</span><span style="--letter-index:5">A</span>
+   <footer class="site-footer">
+      <a class="footer-logo" href="#home" aria-label="Khansa Nur Khalisah — back to home">
+        KHANSA NUR KHALISAH
       </a>
-      <p>Designed for clarity. Built with purpose.</p>
-      <span>© 2026 Khansa Nur Khalisah</span>
+
+      <p class="footer-tagline">
+        Designed for clarity. Built with purpose.
+      </p>
+
+      <span class="footer-copyright">
+        © 2026 Khansa Nur Khalisah
+      </span>
     </footer>
   </main>
 </body>
 </html>
+
