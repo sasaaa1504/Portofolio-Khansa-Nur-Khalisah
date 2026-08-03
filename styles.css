@@ -2881,3 +2881,38 @@ footer > span {
     width: min(270px, calc(100vw - 28px)) !important;
   }
 }
+@media (max-width: 1050px) {
+  .site-header {
+    display: grid !important;
+    grid-template-areas: "brand controls" !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+  }
+
+  .header-brand {
+    grid-area: brand !important;
+    grid-row: 1 !important;
+  }
+
+  .header-controls {
+    grid-area: controls !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 7px !important;
+    margin: 0 !important;
+  }
+
+  .header-controls .theme-toggle,
+  .header-controls .menu-button {
+    position: static !important;
+    inset: auto !important;
+    display: inline-grid !important;
+    place-items: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin: 0 !important;
+    flex: 0 0 44px !important;
+  }
+}
