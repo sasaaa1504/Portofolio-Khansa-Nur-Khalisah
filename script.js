@@ -304,6 +304,7 @@ const certificates = [
   ["12", "sertifpelatihandesign.jpeg", "Pelatihan Design"],
   ["13", "sertifpraktikum.jpeg", "Awarding Best Team"],
   ["14", "sertifseniko.jpeg", "Panitia Seniko"],
+  ["15", "voluntiiran-2026.jpg", "Public Relation Committee Voluntiiran Purwokerto 2026 certificate"],
 ].map(([number, file, alt]) => ({ number, src: `assets/certificates/${file}`, alt }));
 
 const state = {
