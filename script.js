@@ -519,66 +519,6 @@ function restartSkillAutoSlide() {
   clearInterval(skillAutoSlide);
   startSkillAutoSlide();
 }
-const skillsCarousel = document.querySelector("#skills-carousel");
-
-if (skillsCarousel) {
-  skillsCarousel.addEventListener("click", (event) => {
-    const actionButton = event.target.closest("[data-skill-action]");
-    const dotButton = event.target.closest("[data-skill-index]");
-
-    if (actionButton) {
-      const action = actionButton.dataset.skillAction;
-
-      if (action === "previous") {
-        changeSkill(-1);
-      }
-
-      if (action === "next") {
-        changeSkill(1);
-      }
-    }
-
-    if (dotButton) {
-      openSkill(Number(dotButton.dataset.skillIndex));
-    }
-  });
-
-  skillsCarousel.addEventListener(
-    "touchstart",
-    (event) => {
-      skillTouchStartX = event.touches[0].clientX;
-    },
-    { passive: true }
-  );
-
-  skillsCarousel.addEventListener(
-    "touchend",
-    (event) => {
-      const touchEndX = event.changedTouches[0].clientX;
-      const distance = touchEndX - skillTouchStartX;
-
-      if (Math.abs(distance) < 50) return;
-
-      if (distance < 0) {
-        changeSkill(1);
-      } else {
-        changeSkill(-1);
-      }
-    },
-    { passive: true }
-  );
-
-  skillsCarousel.addEventListener("mouseenter", () => {
-    clearInterval(skillAutoSlide);
-  });
-
-  skillsCarousel.addEventListener("mouseleave", () => {
-    restartSkillAutoSlide();
-  });
-}
-
-renderSkills();
-startSkillAutoSlide();
 
 function renderCertificates() {
   document.querySelector("#certificate-track").innerHTML = certificates.map((item, index) => `
@@ -625,10 +565,12 @@ function setupInteractions() {
       renderTimeline();
     }
 
-    const skillDot = event.target.closest("[data-skill]");
+   const skillDot = event.target.closest("[data-skill-index]");
+
     if (skillDot) {
-      state.skill = Number(skillDot.dataset.skill);
+      state.skill = Number(skillDot.dataset.skillIndex);
       renderSkills();
+      restartSkillAutoSlide();
     }
 
     const skillAction = event.target.closest("[data-skill-action]");
@@ -680,11 +622,16 @@ renderExperienceTabs();
 renderTimeline();
 renderSkills();
 renderCertificates();
+
 setupNavigation();
 setupInteractions();
 setupAboutAnimation();
 
-window.setInterval(() => changeCertificate(1), 5000);
+startSkillAutoSlide();
+
+window.setInterval(() => {
+  changeCertificate(1);
+}, 5000);
 
 /* Portfolio loading screen */
 const preloader = document.querySelector("#preloader");
