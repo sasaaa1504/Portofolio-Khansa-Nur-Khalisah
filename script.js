@@ -426,14 +426,18 @@ function positionClass(index, active, length) {
 }
 
 function renderSkills() {
-  document.querySelector("#skills-track").innerHTML = skillGroups.map((group, index) => `
-    <article class="skill-slide ${positionClass(index, state.skill, skillGroups.length)}" aria-hidden="${index !== state.skill}">
-      <div class="skill-head"><span>${group.code}</span><div class="skill-icon">✦</div></div>
-      <h3>${escapeHtml(group.title)}</h3>
-      <div class="skill-tags">${tagsHtml(group.skills)}</div>
+  const track = document.querySelector("#skills-track");
+
+  track.innerHTML = skillGroups.map((group, index) => `
+    <article class="skill-slide" data-index="${index}">
+      <span class="skill-number">${group.number ?? String(index + 1).padStart(2, "0")}</span>
+      <h3>${group.title}</h3>
+
+      <div class="tags">
+        ${group.skills.map((skill) => `<span>${skill}</span>`).join("")}
+      </div>
     </article>
   `).join("");
-  document.querySelector("#skill-dots").innerHTML = skillGroups.map((group, index) => `<button type="button" data-skill="${index}" class="${index === state.skill ? "active" : ""}" aria-label="Show ${escapeHtml(group.title)}" aria-current="${index === state.skill}"></button>`).join("");
 }
 
 function changeSkill(direction) {
