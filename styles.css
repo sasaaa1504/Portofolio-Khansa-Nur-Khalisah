@@ -3713,3 +3713,30 @@ body:not(.loading) .portrait-frame {
     overflow: hidden !important;
   }
 }
+/* FIX SKILL 06 & 08 — MOBILE */
+@media (max-width: 430px) {
+  /* Beri ruang lebih tinggi untuk kartu dengan isi banyak */
+  .skills-track {
+    height: 660px !important;
+  }
+
+  .skill-slide:nth-child(6),
+  .skill-slide:nth-child(8) {
+    height: 620px !important;
+    min-height: 620px !important;
+    padding-bottom: 42px !important;
+    overflow: hidden;
+    border-radius: 28px !important;
+  }
+
+  /* Pastikan kumpulan skill tidak terpotong */
+  .skill-slide:nth-child(6) .tags,
+  .skill-slide:nth-child(8) .tags {
+    padding-bottom: 12px;
+  }
+
+  /* Kontrol tetap berada di bawah kartu */
+  .skills-controls {
+    margin-top: 20px;
+  }
+}
