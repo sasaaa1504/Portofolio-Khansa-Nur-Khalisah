@@ -665,8 +665,6 @@ if (preloader && loadingPercentage && loadingProgress) {
   }, 90);
 }
 /* Dark and light mode */
-const themeToggle = document.querySelector("#theme-toggle");
-const savedTheme = localStorage.getItem("portfolio-theme");
 
 if (savedTheme === "light") {
   document.documentElement.setAttribute("data-theme", "light");
@@ -700,3 +698,35 @@ themeToggle?.addEventListener("click", () => {
 
   updateThemeButton();
 });
+/* DARK AND LIGHT MODE */
+const themeToggle = document.querySelector("#theme-toggle");
+
+/* Website selalu dibuka dalam light mode */
+document.documentElement.setAttribute("data-theme", "light");
+
+function updateThemeButton() {
+  if (!themeToggle) return;
+
+  const isLight =
+    document.documentElement.getAttribute("data-theme") === "light";
+
+  themeToggle.setAttribute(
+    "aria-label",
+    isLight ? "Switch to dark mode" : "Switch to light mode"
+  );
+}
+
+themeToggle?.addEventListener("click", () => {
+  const isLight =
+    document.documentElement.getAttribute("data-theme") === "light";
+
+  if (isLight) {
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+
+  updateThemeButton();
+});
+
+updateThemeButton();
