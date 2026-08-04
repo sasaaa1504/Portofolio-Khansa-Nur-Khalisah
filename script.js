@@ -616,6 +616,40 @@ function setupAboutAnimation() {
   }, { threshold: 0.35 });
   observer.observe(about);
 }
+function setupSectionReveal() {
+  const sections = document.querySelectorAll(
+    "main > section:not(#home)"
+  );
+
+  if (!sections.length) return;
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -60px 0px"
+    }
+  );
+
+  sections.forEach((section, index) => {
+    section.classList.add("reveal-section");
+
+    if (index % 2 === 0) {
+      section.classList.add("reveal-left");
+    } else {
+      section.classList.add("reveal-right");
+    }
+
+    revealObserver.observe(section);
+  });
+}
 
 renderProjects();
 renderExperienceTabs();
@@ -626,6 +660,7 @@ renderCertificates();
 setupNavigation();
 setupInteractions();
 setupAboutAnimation();
+setupSectionReveal();
 
 startSkillAutoSlide();
 
@@ -664,45 +699,14 @@ if (preloader && loadingPercentage && loadingProgress) {
     loadingProgress.style.width = `${loadingValue}%`;
   }, 90);
 }
-/* Dark and light mode */
-
-if (savedTheme === "light") {
-  document.documentElement.setAttribute("data-theme", "light");
-}
-
-function updateThemeButton() {
-  if (!themeToggle) return;
-
-  const isLight =
-    document.documentElement.getAttribute("data-theme") === "light";
-
-  themeToggle.setAttribute(
-    "aria-label",
-    isLight ? "Switch to dark mode" : "Switch to light mode"
-  );
-}
-
-updateThemeButton();
-
-themeToggle?.addEventListener("click", () => {
-  const isLight =
-    document.documentElement.getAttribute("data-theme") === "light";
-
-  if (isLight) {
-    document.documentElement.removeAttribute("data-theme");
-    localStorage.setItem("portfolio-theme", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("portfolio-theme", "light");
-  }
-
-  updateThemeButton();
-});
 /* DARK AND LIGHT MODE */
 const themeToggle = document.querySelector("#theme-toggle");
 
-/* Website selalu dibuka dalam light mode */
+/* Selalu mulai dari light mode */
 document.documentElement.setAttribute("data-theme", "light");
+
+/* Hapus pilihan mode lama yang tersimpan */
+localStorage.removeItem("portfolio-theme");
 
 function updateThemeButton() {
   if (!themeToggle) return;

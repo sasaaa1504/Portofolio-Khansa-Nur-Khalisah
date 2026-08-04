@@ -3208,3 +3208,188 @@ html[data-theme="light"] .menu-button {
     animation: none;
   }
 }
+/* =========================================
+   SECTION REVEAL — KIRI DAN KANAN
+========================================= */
+
+.reveal-section {
+  opacity: 0;
+  filter: blur(8px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease;
+  will-change: opacity, transform, filter;
+}
+
+/* Muncul dari kiri */
+.reveal-section.reveal-left {
+  transform: translateX(-90px) scale(0.97);
+}
+
+/* Muncul dari kanan */
+.reveal-section.reveal-right {
+  transform: translateX(90px) scale(0.97);
+}
+
+/* Posisi akhir */
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
+}
+
+/* Isi di dalam section muncul bertahap */
+.reveal-section > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger atau jeda setiap elemen */
+.reveal-section.is-visible > *:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.reveal-section.is-visible > *:nth-child(2) {
+  transition-delay: 0.16s;
+}
+
+.reveal-section.is-visible > *:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.reveal-section.is-visible > *:nth-child(4) {
+  transition-delay: 0.32s;
+}
+
+.reveal-section.is-visible > *:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+/* Mencegah scrollbar horizontal */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Gerakan lebih pendek pada HP */
+@media (max-width: 820px) {
+  .reveal-section.reveal-left {
+    transform: translateX(-45px) scale(0.98);
+  }
+
+  .reveal-section.reveal-right {
+    transform: translateX(45px) scale(0.98);
+  }
+
+  .reveal-section.is-visible {
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Untuk pengguna yang menonaktifkan animasi */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .reveal-section > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+/* =========================================
+   HERO PHOTO — REVEAL FROM RIGHT
+========================================= */
+
+/* Selama loading, foto disembunyikan */
+body.loading .hero-visual {
+  opacity: 0;
+  transform: translateX(120px) scale(0.94);
+  filter: blur(10px);
+}
+
+/* Muncul setelah loading selesai */
+body:not(.loading) .hero-visual {
+  animation: heroPhotoReveal 1.15s
+    cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+@keyframes heroPhotoReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(120px) scale(0.94);
+    filter: blur(10px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateX(-8px) scale(1.01);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Cahaya lembut setelah foto muncul */
+body:not(.loading) .portrait-frame {
+  animation: portraitGlow 1.4s ease 0.65s both;
+}
+
+@keyframes portraitGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 45, 125, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 55px rgba(255, 45, 125, 0.42);
+  }
+
+  100% {
+    box-shadow: 0 0 25px rgba(255, 45, 125, 0.2);
+  }
+}
+
+/* Jarak animasi diperkecil pada HP */
+@media (max-width: 820px) {
+  body.loading .hero-visual {
+    transform: translateX(55px) scale(0.96);
+  }
+
+  @keyframes heroPhotoReveal {
+    0% {
+      opacity: 0;
+      transform: translateX(55px) scale(0.96);
+      filter: blur(7px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      filter: blur(0);
+    }
+  }
+}
+
+/* Aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+  body.loading .hero-visual,
+  body:not(.loading) .hero-visual,
+  body:not(.loading) .portrait-frame {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+}
