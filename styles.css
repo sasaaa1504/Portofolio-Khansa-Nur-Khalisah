@@ -3236,16 +3236,6 @@ html[data-theme="light"] .menu-button {
   filter: blur(0);
 }
 
-@media (max-width: 820px) {
-  .reveal-section.reveal-left {
-    transform: translateX(-30px);
-  }
-
-  .reveal-section.reveal-right {
-    transform: translateX(30px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .reveal-section {
     opacity: 1 !important;
@@ -3341,5 +3331,84 @@ body:not(.loading) .portrait-frame {
     transform: none !important;
     filter: none !important;
     animation: none !important;
+  }
+}
+/* =========================================
+   PERBAIKAN REVEAL DAN LAYOUT MOBILE
+========================================= */
+
+@media (max-width: 820px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  /* Jangan geser seluruh section ke kanan/kiri di HP */
+  .reveal-section,
+  .reveal-section.reveal-left,
+  .reveal-section.reveal-right {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    transform: translateY(28px);
+    filter: blur(3px);
+  }
+
+  .reveal-section.is-visible,
+  .reveal-section.reveal-left.is-visible,
+  .reveal-section.reveal-right.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* Mengembalikan lebar setiap section */
+  .section-shell,
+  .experience-section {
+    width: calc(100% - 32px);
+    max-width: 100%;
+    margin-inline: auto;
+    left: auto;
+    right: auto;
+  }
+
+  /* Isi section tidak boleh melewati layar */
+  .about-grid,
+  .about-main,
+  .about-description,
+  .about-cards,
+  .section-heading,
+  .projects-grid,
+  .project-card,
+  .experience-tabs,
+  .timeline,
+  .skills-carousel,
+  .certificate-carousel,
+  .contact-section,
+  .contact-links {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Teks panjang tetap masuk layar */
+  .about-main h2,
+  .section-heading h2,
+  .experience-title-group h2,
+  .contact-section h2 {
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  /* Project card dan about card tetap di tengah */
+  .project-card,
+  .about-cards article {
+    transform: none;
+    margin-inline: auto;
   }
 }
