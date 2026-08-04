@@ -258,7 +258,7 @@ const projects = [
 const experiences = [
   ["organization", "2026", "Public Relations", "Volunteer Purwokerto", "Managed external communication, community engagement, and partnerships for social initiatives."],
   ["internship", "2025", "UI/UX Designer Intern", "Kilang Pertamina Internasional", "Designed an IT service monitoring dashboard and data-visualization mockups with developers and IT teams."],
-  ["organization", "2025", "Chairman of Dies Natalis Informatics", "Faculty of Engineering, Unsoed", "Led 6 divisions and 90 committee members through planning, resources, budgets, and execution."],
+  ["organization", "2025", "Chairman of Dies Natalis Informatics", "Informatics Student Association, Faculty of Engineering Unsoed", "Led 6 divisions and 90 committee members through planning, resources, budgets, and execution."],
   ["organization", "2025", "Digital Marketing", "Smartani Greenhouse IoT Monitoring", "Built brand awareness through consistent Instagram and TikTok content strategy."],
   ["organization", "2025", "Tracer Study Surveyor Team", "Faculty of Engineering, Unsoed", "Collected and verified alumni career data for evaluation, accreditation, and graduate-employability reporting."],
   ["project", "2025", "Posyandu Harapan Bunda", "UI/UX Designer", "Designed a healthcare system for administration, registration, service queues, and health-data recording."],
@@ -268,6 +268,7 @@ const experiences = [
   ["project", "2024", "NBA Training Camp App", "UI/UX Designer", "Designed registration experiences and reusable components for interface consistency."],
   ["project", "2024", "HitTix Concert Ticket Booking", "UI/UX Designer", "Designed discovery, event-detail, and booking flows while contributing to system and database design."],
   ["internship", "2023", "Student Development Intern", "Student Resources Development Division — BEM Unsoed", "Supported student development and capacity-building programs, assisted with member performance evaluations, and collaborated on initiatives to strengthen engagement, teamwork, and organizational growth."]
+  ["organization", "2025", "Public Relations Staff", "Informatics Student Association (HMIF Unsoed)", "Managed organizational communications, created and distributed public information, maintained relationships with internal and external stakeholders, supported event promotion, and documented organizational activities across social media platforms."]
 ].map(([category, year, title, place, text]) => ({ category, year, title, place, text }));
 
 const filters = [
