@@ -267,7 +267,7 @@ const experiences = [
   ["project", "2024", "House Price Prediction in Tebet", "Researcher & Developer", "Cleaned 1,000+ property listings and developed a regression model using Python, Pandas, and NumPy."],
   ["project", "2024", "NBA Training Camp App", "UI/UX Designer", "Designed registration experiences and reusable components for interface consistency."],
   ["project", "2024", "HitTix Concert Ticket Booking", "UI/UX Designer", "Designed discovery, event-detail, and booking flows while contributing to system and database design."],
-  ["internship", "2023", "Organizational Internship", "BEM Unsoed", "Supported departmental initiatives while learning organizational operations, collaboration, and student leadership."]
+  ["internship", "2023", "Student Development Intern", "Student Resources Development Division — BEM Unsoed", "Supported student development and capacity-building programs, assisted with member performance evaluations, and collaborated on initiatives to strengthen engagement, teamwork, and organizational growth."]
 ].map(([category, year, title, place, text]) => ({ category, year, title, place, text }));
 
 const filters = [
