@@ -3214,97 +3214,47 @@ html[data-theme="light"] .menu-button {
 
 .reveal-section {
   opacity: 0;
-  filter: blur(8px);
+  filter: blur(6px);
   transition:
-    opacity 0.9s ease,
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.9s ease;
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.85s ease;
   will-change: opacity, transform, filter;
 }
 
-/* Muncul dari kiri */
 .reveal-section.reveal-left {
-  transform: translateX(-90px) scale(0.97);
+  transform: translateX(-70px);
 }
 
-/* Muncul dari kanan */
 .reveal-section.reveal-right {
-  transform: translateX(90px) scale(0.97);
+  transform: translateX(70px);
 }
 
-/* Posisi akhir */
 .reveal-section.is-visible {
   opacity: 1;
-  transform: translateX(0) scale(1);
+  transform: translateX(0);
   filter: blur(0);
 }
 
-/* Isi di dalam section muncul bertahap */
-.reveal-section > * {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-section.is-visible > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger atau jeda setiap elemen */
-.reveal-section.is-visible > *:nth-child(1) {
-  transition-delay: 0.08s;
-}
-
-.reveal-section.is-visible > *:nth-child(2) {
-  transition-delay: 0.16s;
-}
-
-.reveal-section.is-visible > *:nth-child(3) {
-  transition-delay: 0.24s;
-}
-
-.reveal-section.is-visible > *:nth-child(4) {
-  transition-delay: 0.32s;
-}
-
-.reveal-section.is-visible > *:nth-child(5) {
-  transition-delay: 0.4s;
-}
-
-/* Mencegah scrollbar horizontal */
-html,
-body {
-  overflow-x: hidden;
-}
-
-/* Gerakan lebih pendek pada HP */
 @media (max-width: 820px) {
   .reveal-section.reveal-left {
-    transform: translateX(-45px) scale(0.98);
+    transform: translateX(-30px);
   }
 
   .reveal-section.reveal-right {
-    transform: translateX(45px) scale(0.98);
-  }
-
-  .reveal-section.is-visible {
-    transform: translateX(0) scale(1);
+    transform: translateX(30px);
   }
 }
 
-/* Untuk pengguna yang menonaktifkan animasi */
 @media (prefers-reduced-motion: reduce) {
-  .reveal-section,
-  .reveal-section > * {
+  .reveal-section {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
     transition: none !important;
   }
 }
+
 /* =========================================
    HERO PHOTO — REVEAL FROM RIGHT
 ========================================= */

@@ -618,39 +618,45 @@ function setupAboutAnimation() {
 }
 function setupSectionReveal() {
   const sections = document.querySelectorAll(
-    "main > section:not(#home)"
-  );
-
-  if (!sections.length) return;
-
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -60px 0px"
-    }
+    "main > section:not(#home), footer"
   );
 
   sections.forEach((section, index) => {
-    section.classList.add("reveal-section");
-
-    if (index % 2 === 0) {
-      section.classList.add("reveal-left");
-    } else {
-      section.classList.add("reveal-right");
-    }
-
-    revealObserver.observe(section);
+    section.classList.add(
+      "reveal-section",
+      index % 2 === 0 ? "reveal-left" : "reveal-right"
+    );
   });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.01,
+      rootMargin: "0px 0px -20px 0px"
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  setTimeout(() => {
+    sections.forEach((section) => {
+      const position = section.getBoundingClientRect();
+
+      if (position.top < window.innerHeight * 1.5) {
+        section.classList.add("is-visible");
+      }
+    });
+  }, 1000);
 }
 
+setupSectionReveal();
 renderProjects();
 renderExperienceTabs();
 renderTimeline();
