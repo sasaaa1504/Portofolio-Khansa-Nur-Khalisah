@@ -291,28 +291,154 @@ const skillGroups = [
 
 
 const certificates = [
-  ["01", "pertamina-internship.jpg", "Pertamina internship certificate"],
-  ["02", "hmif-2025.jpg", "HMIF Unsoed 2025 certificate"],
-  ["03", "dies-natalis.jpg", "Dies Natalis Informatics certificate"],
-  ["04", "bem-impulse.jpg", "BEM Unsoed Impulse certificate"],
-  ["05", "research-data-2024.jpg", "Research and Data staff certificate"],
-  ["06", "student-summit-2024.jpg", "Soedirman Student Summit 2024 certificate"],
-  ["07", "revou-digital-marketing.jpg", "RevoU Digital Marketing certificate"],
-  ["08", "revou-data-analytics.jpg", "RevoU Data Analytics certificate"],
-  ["09", "inflasi-2023.jpg", "INFLASI 2023 certificate"],
-  ["10", "excel-bootcamp-2026.jpg", "Microsoft Excel bootcamp certificate"],
-  ["11", "sertiflustrum.jpeg", "sertifikatlustrum"],
-  ["12", "sertifpelatihandesign.jpeg", "Pelatihan Design"],
-  ["13", "sertifpraktikum.jpeg", "Awarding Best Team"],
-  ["14", "sertifseniko.jpeg", "Panitia Seniko"],
-  ["15", "voluntiiran-2026.jpg", "Public Relation Committee Voluntiiran Purwokerto 2026 certificate"],
-].map(([number, file, alt]) => ({ number, src: `assets/certificates/${file}`, alt }));
+  {
+    number: "01",
+    file: "pertamina-internship.jpg",
+    alt: "Pertamina internship certificate",
+    title: "Internship Certificate — PT Kilang Pertamina Internasional",
+    issuer: "PT Kilang Pertamina Internasional",
+    year: "2025",
+    description: "Completed an internship at the IT RU IV Function, contributing to UI/UX design, IT service dashboards, and real-time system monitoring from July to August 2025."
+  },
+  {
+    number: "02",
+    file: "hmif-2025.jpg",
+    alt: "HMIF Unsoed 2025 certificate",
+    title: "HMIF Unsoed 2025 Certificate",
+    issuer: "HMIF Universitas Jenderal Soedirman",
+    year: "2025",
+    description: "Recognition for organizational involvement and contribution as Public Relations Staff in HMIF Unsoed."
+  },
+  {
+    number: "03",
+    file: "dies-natalis.jpg",
+    alt: "Dies Natalis Informatics certificate",
+    title: "Dies Natalis Informatics Certificate",
+    issuer: "Informatics, Faculty of Engineering, Unsoed",
+    year: "2023",
+    description: "Awarded for serving as Chairman of the Informatics Dies Natalis committee and coordinating the overall event preparation and execution."
+  },
+  {
+    number: "04",
+    file: "bem-impulse.jpg",
+    alt: "BEM Unsoed Impulse certificate",
+    title: "BEM Unsoed Impulse Certificate",
+    issuer: "BEM Universitas Jenderal Soedirman",
+    year: "2023",
+    description: "Recognition for active contribution to the Impulse program under the Student Resource Development Ministry of BEM Unsoed."
+  },
+  {
+    number: "05",
+    file: "research-data-2024.jpg",
+    alt: "Research and Data Division staff certificate",
+    title: "Research & Data Division Staff Certificate",
+    issuer: "BEM Universitas Jenderal Soedirman",
+    year: "2024",
+    description: "Recognition as Data Analysis Staff in the Research and Data Ministry, supporting organizational research, data processing, and program evaluation."
+  },
+  {
+    number: "06",
+    file: "student-summit-2024.jpg",
+    alt: "Soedirman Student Summit 2024 certificate",
+    title: "Soedirman Student Summit 2024 Certificate",
+    issuer: "BEM Universitas Jenderal Soedirman",
+    year: "2024",
+    description: "Certificate for contributing to the field division of Soedirman Student Summit 2024 and supporting on-site event operations."
+  },
+  {
+    number: "07",
+    file: "revou-digital-marketing.jpg",
+    alt: "RevoU Digital Marketing certificate",
+    title: "RevoU Digital Marketing Certificate",
+    issuer: "RevoU",
+    year: "2025",
+    description: "Completed a certified introductory course covering digital marketing fundamentals, audience strategy, campaigns, and digital communication."
+  },
+  {
+    number: "08",
+    file: "revou-data-analytics.jpg",
+    alt: "RevoU Data Analytics certificate",
+    title: "RevoU Data Analytics Certificate",
+    issuer: "RevoU",
+    year: "2024",
+    description: "Completed an introductory Data Analytics course covering analytical thinking, data processing, and the use of data to support decisions."
+  },
+  {
+    number: "09",
+    file: "inflasi-2023.jpg",
+    alt: "INFLASI 2023 committee certificate",
+    title: "INFLASI 2023 Committee Certificate",
+    issuer: "BEM Universitas Jenderal Soedirman",
+    year: "2023",
+    description: "Recognition for serving as Publication, Documentation, and Design Coordinator in the INFLASI 2023 leadership and cadre development program."
+  },
+  {
+    number: "10",
+    file: "excel-bootcamp-2026.jpg",
+    alt: "Microsoft Excel bootcamp certificate",
+    title: "Microsoft Excel Bootcamp Certificate",
+    issuer: "Karirnex by PT Ebiz Karisma Internasional",
+    year: "2026",
+    description: "Completed a three-week intensive Microsoft Excel bootcamp and achieved the Expert competency level."
+  },
+  {
+    number: "11",
+    file: "sertiflustrum.jpeg",
+    alt: "Lustrum Dies Natalis Informatics certificate",
+    title: "Lustrum Dies Natalis Informatics Certificate",
+    issuer: "Informatics, Faculty of Engineering, Unsoed",
+    year: "",
+    description: "Recognition for serving as Security Staff during the Lustrum and Dies Natalis Informatics event."
+  },
+  {
+    number: "12",
+    file: "sertifpelatihandesign.jpeg",
+    alt: "Basic Design Training certificate",
+    title: "Basic Design Training Certificate",
+    issuer: "HMIF Universitas Jenderal Soedirman",
+    year: "",
+    description: "Completed basic design training covering visual composition, design principles, and communication through digital media."
+  },
+  {
+    number: "13",
+    file: "sertifpraktikum.jpeg",
+    alt: "Best Team Web Programming Practicum certificate",
+    title: "Best Team Award — Web Programming Practicum",
+    issuer: "Informatics, Faculty of Engineering, Unsoed",
+    year: "",
+    description: "Awarded Best Team for collaboration, technical implementation, and project delivery in a Web Programming practicum."
+  },
+  {
+    number: "14",
+    file: "sertifseniko.jpeg",
+    alt: "Seniko committee certificate",
+    title: "Seniko Committee Certificate",
+    issuer: "Informatics, Faculty of Engineering, Unsoed",
+    year: "2025",
+    description: "Recognition for serving in the Public Relations and Liaison Officer division of Seminar Nasional Informatika 2025."
+  },
+  {
+    number: "15",
+    file: "voluntiiran-2026.jpg",
+    alt: "Voluntiiran Purwokerto Public Relations certificate",
+    title: "Public Relations Committee — Voluntiiran Purwokerto",
+    issuer: "Voluntiiran Purwokerto",
+    year: "2026",
+    description: "Recognition for contributing as Public Relations Committee, supporting external communication, partnerships, and community engagement."
+  }
+].map((certificate) => ({
+  ...certificate,
+  src: `assets/certificates/${certificate.file}`
+}));
 
 const state = {
   project: 0,
   experience: "all",
+  experienceFilter: "all",
   skill: 0,
-  certificate: 0
+  certificate: 0,
+  skillSwipeStart: null,
+  certificateSwipeStart: null
 };
 
 const escapeHtml = (value) => String(value)
@@ -522,19 +648,108 @@ function restartSkillAutoSlide() {
 }
 
 function renderCertificates() {
-  document.querySelector("#certificate-track").innerHTML = certificates.map((item, index) => `
-    <figure class="certificate-slide ${positionClass(index, state.certificate, certificates.length)}" aria-hidden="${index !== state.certificate}">
-      <div class="certificate-image">
-        <img src="${item.src}" alt="${escapeHtml(item.alt)}">
-        <b>${item.number} / ${String(certificates.length).padStart(2, "0")}</b>
-      </div>
-    </figure>
+  const track = document.querySelector("#certificate-track");
+  const dots = document.querySelector("#certificate-dots");
+
+  if (!track || !dots) return;
+
+  track.innerHTML = certificates.map((item, index) => `
+    <article
+      class="certificate-slide ${positionClass(
+        index,
+        state.certificate,
+        certificates.length
+      )}"
+      aria-hidden="${index !== state.certificate}"
+    >
+      <button
+        class="certificate-card"
+        type="button"
+        data-certificate-detail="${index}"
+        aria-label="View details for ${escapeHtml(item.title)}"
+        ${index !== state.certificate ? 'tabindex="-1"' : ""}
+      >
+        <div class="certificate-image">
+          <img
+            src="${item.src}"
+            alt="${escapeHtml(item.alt)}"
+            loading="lazy"
+          >
+
+          <b>
+            ${item.number} /
+            ${String(certificates.length).padStart(2, "0")}
+          </b>
+        </div>
+
+        <div class="certificate-copy">
+          <span class="certificate-kicker">CERTIFICATE</span>
+
+          <h3>${escapeHtml(item.title)}</h3>
+
+          <p>${escapeHtml(item.issuer)}</p>
+
+          <span class="certificate-detail-link">
+            View details
+
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 12L12 4M6 4h6v6"></path>
+            </svg>
+          </span>
+        </div>
+      </button>
+    </article>
   `).join("");
-  document.querySelector("#certificate-dots").innerHTML = certificates.map((_, index) => `<button type="button" data-certificate="${index}" class="${index === state.certificate ? "active" : ""}" aria-label="Show certificate ${index + 1}" aria-current="${index === state.certificate}"></button>`).join("");
+
+  dots.innerHTML = certificates.map((_, index) => `
+    <button
+      type="button"
+      data-certificate="${index}"
+      class="${index === state.certificate ? "active" : ""}"
+      aria-label="Show certificate ${index + 1}"
+      aria-current="${index === state.certificate}"
+    ></button>
+  `).join("");
+}
+
+const certificateModal = document.querySelector("#certificate-modal");
+const certificateModalImage = document.querySelector("#certificate-modal-image");
+const certificateModalTitle = document.querySelector("#certificate-modal-title");
+const certificateModalDescription = document.querySelector("#certificate-modal-description");
+const certificateModalIssuer = document.querySelector("#certificate-modal-issuer");
+const certificateModalYear = document.querySelector("#certificate-modal-year");
+const certificateModalClose = document.querySelector("#certificate-modal-close");
+
+function openCertificateDetail(index) {
+  const certificate = certificates[index];
+
+  if (!certificate || !certificateModal) return;
+
+  certificateModalImage.src = certificate.src;
+  certificateModalImage.alt = certificate.alt;
+  certificateModalTitle.textContent = certificate.title;
+  certificateModalDescription.textContent = certificate.description;
+  certificateModalIssuer.textContent = certificate.issuer;
+  certificateModalYear.textContent = certificate.year;
+
+  certificateModalYear.hidden = !certificate.year;
+  certificateModal.hidden = false;
+  document.body.classList.add("modal-open");
+
+  certificateModalClose?.focus();
+}
+
+function closeCertificateDetail() {
+  if (!certificateModal) return;
+
+  certificateModal.hidden = true;
+  document.body.classList.remove("modal-open");
 }
 
 function changeCertificate(direction) {
-  state.certificate = (state.certificate + direction + certificates.length) % certificates.length;
+  state.certificate =
+    (state.certificate + direction + certificates.length) %
+    certificates.length;
   renderCertificates();
 }
 
@@ -577,6 +792,17 @@ function setupInteractions() {
     const skillAction = event.target.closest("[data-skill-action]");
     if (skillAction) changeSkill(skillAction.dataset.skillAction === "next" ? 1 : -1);
 
+    const certificateDetail = event.target.closest(
+      "[data-certificate-detail]"
+    );
+
+    if (certificateDetail) {
+      openCertificateDetail(
+        Number(certificateDetail.dataset.certificateDetail)
+      );
+      return;
+    }
+
     const certificateDot = event.target.closest("[data-certificate]");
     if (certificateDot) {
       state.certificate = Number(certificateDot.dataset.certificate);
@@ -585,15 +811,32 @@ function setupInteractions() {
 
     const certificateAction = event.target.closest("[data-certificate-action]");
     if (certificateAction) changeCertificate(certificateAction.dataset.certificateAction === "next" ? 1 : -1);
+
+    if (
+      event.target === certificateModal ||
+      event.target.closest("#certificate-modal-close")
+    ) {
+      closeCertificateDetail();
+    }
   });
 
   document.querySelector(".case-close").addEventListener("click", closeProject);
   document.querySelector("#case-modal").addEventListener("mousedown", (event) => {
     if (event.target === event.currentTarget) closeProject();
   });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !document.querySelector("#case-modal").hidden) closeProject();
-  });
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+
+  const caseModal = document.querySelector("#case-modal");
+
+  if (caseModal && !caseModal.hidden) {
+    closeProject();
+  }
+
+  if (certificateModal && !certificateModal.hidden) {
+    closeCertificateDetail();
+  }
+});
 
   const bindSwipe = (element, startKey, callback) => {
     element.addEventListener("touchstart", (event) => { state[startKey] = event.touches[0].clientX; }, { passive: true });
